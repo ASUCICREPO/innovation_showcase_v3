@@ -1,0 +1,12 @@
+type ChallengesInfo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  ProjectName: String
+  Category: String
+  Customer: String
+  AWSServices: String
+  ProjectPic: String
+  ProjectInfoURL: String
+  Demolink: String
+  Highlight: Boolean
+}
+ 
