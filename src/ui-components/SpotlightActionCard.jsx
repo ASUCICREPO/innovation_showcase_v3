@@ -31,7 +31,7 @@ export default function SpotlightActionCard(props) {
     <Flex
       gap="0"
       direction="column"
-      width="264px"
+      width="269px"
       height="unset"
       justifyContent="center"
       alignItems="flex-start"
@@ -42,8 +42,8 @@ export default function SpotlightActionCard(props) {
       {...rest}
     >
       <Image
-        width="264px"
-        height="140px"
+        width="269px"
+        height="180px"
         display="block"
         gap="unset"
         alignItems="unset"

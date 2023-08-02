@@ -34,7 +34,6 @@ export default function SpotlightActionCardCollection(props) {
   return (
     <Collection
       type="list"
-      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={3}

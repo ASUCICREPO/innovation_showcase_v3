@@ -1,0 +1,24 @@
+/* categoryWiseChallenges.css */
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-name {
+    margin: 0 0 10px 0; /* Adjust according to your design needs */
+}
+
+.category-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    height: auto;
+}
+
+.challenges-container {
+    display: flex;
+}
+
+.challenge-item {
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: 20px; /* Spacing between cards */
+}
