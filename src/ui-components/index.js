@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as Carousel } from "./Carousel";
 export { default as ChallengesInfoCreateForm } from "./ChallengesInfoCreateForm";
 export { default as ChallengesInfoUpdateForm } from "./ChallengesInfoUpdateForm";
 export { default as NavBarHeader2 } from "./NavBarHeader2";

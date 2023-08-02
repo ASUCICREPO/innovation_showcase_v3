@@ -31,7 +31,7 @@ export default function SpotlightActionCard(props) {
     <Flex
       gap="0"
       direction="column"
-      width="320px"
+      width="264px"
       height="unset"
       justifyContent="center"
       alignItems="flex-start"
@@ -42,14 +42,13 @@ export default function SpotlightActionCard(props) {
       {...rest}
     >
       <Image
-        width="unset"
-        height="424px"
+        width="264px"
+        height="140px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"

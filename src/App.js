@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { DataStore } from 'aws-amplify';
+import {Post, User} from  './models'
+import { useEffect , useState} from 'react';
+import SpotlightActionCardCollection from './ui-components/SpotlightActionCardCollection';
+import NavBarHeader2 from './ui-components/NavBarHeader2';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <NavBarHeader2/>
+        <div  style={{ 
+          paddingTop: '20px',
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', // align items along the row
+        }}> 
+          <SpotlightActionCardCollection/>
+        </div>
+      
     </div>
   );
 }
