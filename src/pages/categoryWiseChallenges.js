@@ -34,22 +34,22 @@ const CategoryDisplay = () => {
     }, []);
   
     return (
-        <div>
-        {categories.map((category) => (
-          <div key={category.name} className="category-section">
-            <h2 className="category-name">{category.name}</h2>
-            <div className="category-container">
-              <div className="challenges-container">
-                {category.challenges.map((challenge) => (
-                  <div key={challenge.id} className="challenge-item">
-                    <StandardCard challengesInfo={challenge} />
-                  </div>
-                ))}
+       <div>
+    {categories.map((category) => (
+      <div key={category.name} className="category-section">
+        <h2 className="category-name">{category.name}</h2>
+        <div className="category-container">
+          <div className="challenges-container">
+            {category.challenges.map((challenge) => (
+              <div key={challenge.id} className="challenge-item">
+                <StandardCard challengesInfo={challenge} />
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
+    ))}
+  </div>
     );
   };
   

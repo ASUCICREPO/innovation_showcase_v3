@@ -5,6 +5,9 @@
 
 .category-name {
     margin: 0 0 10px 0; /* Adjust according to your design needs */
+    font-family:"Inter";
+    font-size: 20px;
+    
 }
 
 .category-container {
