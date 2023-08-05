@@ -18,8 +18,10 @@ type EagerChallengesInfo = {
   readonly AWSServices?: string | null;
   readonly ProjectPic?: string | null;
   readonly ProjectInfoURL?: string | null;
-  readonly Demolink?: string | null;
   readonly Highlight?: boolean | null;
+  readonly Demo?: string | null;
+  readonly github?: string | null;
+  readonly approach?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -36,8 +38,10 @@ type LazyChallengesInfo = {
   readonly AWSServices?: string | null;
   readonly ProjectPic?: string | null;
   readonly ProjectInfoURL?: string | null;
-  readonly Demolink?: string | null;
   readonly Highlight?: boolean | null;
+  readonly Demo?: string | null;
+  readonly github?: string | null;
+  readonly approach?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

@@ -3,7 +3,7 @@ import { DataStore } from 'aws-amplify';
 import { ChallengesInfo } from  '../models/index';
 import StandardCard from '../ui-components/StandardCard'
 import './categoryWiseChallenges.css';
-
+import { Link } from 'react-router-dom';
 
 const CategoryDisplay = () => {
     const [categories, setCategories] = useState([]);
@@ -42,7 +42,9 @@ const CategoryDisplay = () => {
           <div className="challenges-container">
             {category.challenges.map((challenge) => (
               <div key={challenge.id} className="challenge-item">
-                <StandardCard challengesInfo={challenge} />
+                
+                  <StandardCard challengesInfo={challenge} />
+                
               </div>
             ))}
           </div>

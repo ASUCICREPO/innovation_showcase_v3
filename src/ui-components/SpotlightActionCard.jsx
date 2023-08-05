@@ -25,7 +25,7 @@ export default function SpotlightActionCard(props) {
   const buttonOnClick = useNavigateAction({
     target: "_blank",
     type: "url",
-    url: challengesInfo?.Demolink,
+    url: challengesInfo?.Demo,
   });
   return (
     <Flex

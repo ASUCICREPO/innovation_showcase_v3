@@ -11,6 +11,11 @@ import {
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
+import ProductDetail from './ProductDetail'
+import { useNavigate } from 'react-router-dom';
+
+
+
 export default function StandardCard(props) {
   const { challengesInfo, overrides, ...rest } = props;
   const [cardAreaBackgroundColor, setCardAreaBackgroundColor] =
@@ -21,6 +26,9 @@ export default function StandardCard(props) {
   const standardCardOnMouseLeave = () => {
     setCardAreaBackgroundColor("transparent");
   };
+
+  const navigate = useNavigate();
+
   return (
     <Flex
       gap="0"
@@ -44,12 +52,15 @@ export default function StandardCard(props) {
       {...rest}
     >
       <Image
+       onClick={() => navigate(`${challengesInfo?.id}`, {
+        state: { challengesInfo }
+      })}
         width="unset"
         height="160px"
         display="block"
         gap="unset"
         alignItems="unset"
-        justifyContent="unset"
+        justifyContent="unset"  
         shrink="0"
         alignSelf="stretch"
         position="relative"
@@ -111,6 +122,7 @@ export default function StandardCard(props) {
           ></Text>
         </Flex>
       </Flex>
+  {/*{showPopup && <ProductDetail challengesInfo={challengesInfo} />} {/* Conditionally render the popup */}
     </Flex>
   );
 }

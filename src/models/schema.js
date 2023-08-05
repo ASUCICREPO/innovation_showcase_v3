@@ -52,17 +52,31 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "Demolink": {
-                    "name": "Demolink",
+                "Highlight": {
+                    "name": "Highlight",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Demo": {
+                    "name": "Demo",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "Highlight": {
-                    "name": "Highlight",
+                "github": {
+                    "name": "github",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "approach": {
+                    "name": "approach",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -112,5 +126,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "b0f3ae43ef757f1179540be017a4d41e"
+    "version": "2efd4034b47fcd7aee5d9b039a54cee4"
 };

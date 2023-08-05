@@ -9,6 +9,7 @@ export { default as ChallengesInfoCreateForm } from "./ChallengesInfoCreateForm"
 export { default as ChallengesInfoUpdateForm } from "./ChallengesInfoUpdateForm";
 export { default as Filters } from "./Filters";
 export { default as NavBarHeader2 } from "./NavBarHeader2";
+export { default as ProductDetail } from "./ProductDetail";
 export { default as SpotlightActionCard } from "./SpotlightActionCard";
 export { default as SpotlightActionCardCollection } from "./SpotlightActionCardCollection";
 export { default as StandardCard } from "./StandardCard";

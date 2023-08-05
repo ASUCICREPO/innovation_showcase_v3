@@ -36,8 +36,10 @@ export default function ChallengesInfoUpdateForm(props) {
     AWSServices: "",
     ProjectPic: "",
     ProjectInfoURL: "",
-    Demolink: "",
     Highlight: false,
+    Demo: "",
+    github: "",
+    approach: "",
   };
   const [ProjectName, setProjectName] = React.useState(
     initialValues.ProjectName
@@ -51,8 +53,10 @@ export default function ChallengesInfoUpdateForm(props) {
   const [ProjectInfoURL, setProjectInfoURL] = React.useState(
     initialValues.ProjectInfoURL
   );
-  const [Demolink, setDemolink] = React.useState(initialValues.Demolink);
   const [Highlight, setHighlight] = React.useState(initialValues.Highlight);
+  const [Demo, setDemo] = React.useState(initialValues.Demo);
+  const [github, setGithub] = React.useState(initialValues.github);
+  const [approach, setApproach] = React.useState(initialValues.approach);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = challengesInfoRecord
@@ -64,8 +68,10 @@ export default function ChallengesInfoUpdateForm(props) {
     setAWSServices(cleanValues.AWSServices);
     setProjectPic(cleanValues.ProjectPic);
     setProjectInfoURL(cleanValues.ProjectInfoURL);
-    setDemolink(cleanValues.Demolink);
     setHighlight(cleanValues.Highlight);
+    setDemo(cleanValues.Demo);
+    setGithub(cleanValues.github);
+    setApproach(cleanValues.approach);
     setErrors({});
   };
   const [challengesInfoRecord, setChallengesInfoRecord] = React.useState(
@@ -88,8 +94,10 @@ export default function ChallengesInfoUpdateForm(props) {
     AWSServices: [],
     ProjectPic: [],
     ProjectInfoURL: [],
-    Demolink: [],
     Highlight: [],
+    Demo: [],
+    github: [],
+    approach: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -123,8 +131,10 @@ export default function ChallengesInfoUpdateForm(props) {
           AWSServices,
           ProjectPic,
           ProjectInfoURL,
-          Demolink,
           Highlight,
+          Demo,
+          github,
+          approach,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -186,8 +196,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic,
               ProjectInfoURL,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.ProjectName ?? value;
@@ -217,8 +229,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic,
               ProjectInfoURL,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.Category ?? value;
@@ -248,8 +262,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic,
               ProjectInfoURL,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.Customer ?? value;
@@ -279,8 +295,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices: value,
               ProjectPic,
               ProjectInfoURL,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.AWSServices ?? value;
@@ -310,8 +328,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic: value,
               ProjectInfoURL,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.ProjectPic ?? value;
@@ -341,8 +361,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic,
               ProjectInfoURL: value,
-              Demolink,
               Highlight,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.ProjectInfoURL ?? value;
@@ -356,37 +378,6 @@ export default function ChallengesInfoUpdateForm(props) {
         errorMessage={errors.ProjectInfoURL?.errorMessage}
         hasError={errors.ProjectInfoURL?.hasError}
         {...getOverrideProps(overrides, "ProjectInfoURL")}
-      ></TextField>
-      <TextField
-        label="Demolink"
-        isRequired={false}
-        isReadOnly={false}
-        value={Demolink}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              ProjectName,
-              Category,
-              Customer,
-              AWSServices,
-              ProjectPic,
-              ProjectInfoURL,
-              Demolink: value,
-              Highlight,
-            };
-            const result = onChange(modelFields);
-            value = result?.Demolink ?? value;
-          }
-          if (errors.Demolink?.hasError) {
-            runValidationTasks("Demolink", value);
-          }
-          setDemolink(value);
-        }}
-        onBlur={() => runValidationTasks("Demolink", Demolink)}
-        errorMessage={errors.Demolink?.errorMessage}
-        hasError={errors.Demolink?.hasError}
-        {...getOverrideProps(overrides, "Demolink")}
       ></TextField>
       <SwitchField
         label="Highlight"
@@ -403,8 +394,10 @@ export default function ChallengesInfoUpdateForm(props) {
               AWSServices,
               ProjectPic,
               ProjectInfoURL,
-              Demolink,
               Highlight: value,
+              Demo,
+              github,
+              approach,
             };
             const result = onChange(modelFields);
             value = result?.Highlight ?? value;
@@ -419,6 +412,105 @@ export default function ChallengesInfoUpdateForm(props) {
         hasError={errors.Highlight?.hasError}
         {...getOverrideProps(overrides, "Highlight")}
       ></SwitchField>
+      <TextField
+        label="Demo"
+        isRequired={false}
+        isReadOnly={false}
+        value={Demo}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo: value,
+              github,
+              approach,
+            };
+            const result = onChange(modelFields);
+            value = result?.Demo ?? value;
+          }
+          if (errors.Demo?.hasError) {
+            runValidationTasks("Demo", value);
+          }
+          setDemo(value);
+        }}
+        onBlur={() => runValidationTasks("Demo", Demo)}
+        errorMessage={errors.Demo?.errorMessage}
+        hasError={errors.Demo?.hasError}
+        {...getOverrideProps(overrides, "Demo")}
+      ></TextField>
+      <TextField
+        label="Github"
+        isRequired={false}
+        isReadOnly={false}
+        value={github}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo,
+              github: value,
+              approach,
+            };
+            const result = onChange(modelFields);
+            value = result?.github ?? value;
+          }
+          if (errors.github?.hasError) {
+            runValidationTasks("github", value);
+          }
+          setGithub(value);
+        }}
+        onBlur={() => runValidationTasks("github", github)}
+        errorMessage={errors.github?.errorMessage}
+        hasError={errors.github?.hasError}
+        {...getOverrideProps(overrides, "github")}
+      ></TextField>
+      <TextField
+        label="Approach"
+        isRequired={false}
+        isReadOnly={false}
+        value={approach}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo,
+              github,
+              approach: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.approach ?? value;
+          }
+          if (errors.approach?.hasError) {
+            runValidationTasks("approach", value);
+          }
+          setApproach(value);
+        }}
+        onBlur={() => runValidationTasks("approach", approach)}
+        errorMessage={errors.approach?.errorMessage}
+        hasError={errors.approach?.hasError}
+        {...getOverrideProps(overrides, "approach")}
+      ></TextField>
       <Flex
         justifyContent="space-between"
         {...getOverrideProps(overrides, "CTAFlex")}

@@ -20,8 +20,10 @@ export declare type ChallengesInfoUpdateFormInputValues = {
     AWSServices?: string;
     ProjectPic?: string;
     ProjectInfoURL?: string;
-    Demolink?: string;
     Highlight?: boolean;
+    Demo?: string;
+    github?: string;
+    approach?: string;
 };
 export declare type ChallengesInfoUpdateFormValidationValues = {
     ProjectName?: ValidationFunction<string>;
@@ -30,8 +32,10 @@ export declare type ChallengesInfoUpdateFormValidationValues = {
     AWSServices?: ValidationFunction<string>;
     ProjectPic?: ValidationFunction<string>;
     ProjectInfoURL?: ValidationFunction<string>;
-    Demolink?: ValidationFunction<string>;
     Highlight?: ValidationFunction<boolean>;
+    Demo?: ValidationFunction<string>;
+    github?: ValidationFunction<string>;
+    approach?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ChallengesInfoUpdateFormOverridesProps = {
@@ -42,8 +46,10 @@ export declare type ChallengesInfoUpdateFormOverridesProps = {
     AWSServices?: PrimitiveOverrideProps<TextFieldProps>;
     ProjectPic?: PrimitiveOverrideProps<TextFieldProps>;
     ProjectInfoURL?: PrimitiveOverrideProps<TextFieldProps>;
-    Demolink?: PrimitiveOverrideProps<TextFieldProps>;
     Highlight?: PrimitiveOverrideProps<SwitchFieldProps>;
+    Demo?: PrimitiveOverrideProps<TextFieldProps>;
+    github?: PrimitiveOverrideProps<TextFieldProps>;
+    approach?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ChallengesInfoUpdateFormProps = React.PropsWithChildren<{
     overrides?: ChallengesInfoUpdateFormOverridesProps | undefined | null;
