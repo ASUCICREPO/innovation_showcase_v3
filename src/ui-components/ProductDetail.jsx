@@ -279,20 +279,23 @@ export default function ProductDetail(props) {
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 28")}
           >
-            <Button
-              width="unset"
-              height="unset"
-              gap="24px"
-              shrink="0"
-              size="default"
-              isDisabled={false}
-              variation="default"
-              children="GitHub"
-              onClick={() => {
-                buttonTwoNineSevenSixSixNineEightZeroOnClick();
-              }}
-              {...getOverrideProps(overrides, "Button29766980")}
-            ></Button>
+            {challengesInfo?.github && (
+              <Button
+                width="unset"
+                height="unset"
+                gap="24px"
+                shrink="0"
+                size="default"
+                isDisabled={false}
+                variation="default"
+                children="GitHub"
+                onClick={() => {
+                  buttonTwoNineSevenSixSixNineEightZeroOnClick();
+                }}
+                {...getOverrideProps(overrides, "Button29766980")}
+              ></Button>
+            )}
+            {challengesInfo?.ProjectInfoURL && (
             <Button
               width="unset"
               height="unset"
@@ -306,7 +309,8 @@ export default function ProductDetail(props) {
                 buttonTwoNineSevenSixSixNineEightOneOnClick();
               }}
               {...getOverrideProps(overrides, "Button29766981")}
-            ></Button>
+            ></Button>)}
+            {challengesInfo?.Demo && (
             <Button
               width="unset"
               height="unset"
@@ -320,7 +324,7 @@ export default function ProductDetail(props) {
                 buttonTwoNineSevenSixSixNineEightTwoOnClick();
               }}
               {...getOverrideProps(overrides, "Button29766982")}
-            ></Button>
+            ></Button>)}
           </Flex>
         </Flex>
       </Flex>
