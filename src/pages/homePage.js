@@ -5,17 +5,19 @@ import SpotlightActionCardCollection from '../ui-components/SpotlightActionCardC
 
 
 function homePage() {
+  const styles = {
+    margin: '2% 0% 0% 10%',
+    display: 'flex',
+    flexDirection: 'row', // Makes it a row
+    justifyContent: 'center', // Centers items along the row
+    width: '80%', // Uses 90% of the full width
+    overflowX: 'auto', // Allows horizontal scrolling
+    
+  }
   return (
     
     <div className="App">
-      
-        
-        <div  style={{ 
-          paddingTop: '40px',
-          display: 'flex', 
-          flexDirection: 'column', 
-          alignItems: 'center', // align items along the row
-        }}> 
+        <div  style={styles}> 
           <SpotlightActionCardCollection/>
         </div>
         <div style={{ margin: '3%' }}>

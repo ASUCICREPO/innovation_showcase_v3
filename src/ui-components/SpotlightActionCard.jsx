@@ -31,19 +31,20 @@ export default function SpotlightActionCard(props) {
     <Flex
       gap="0"
       direction="column"
-      width="269px"
-      height="unset"
+      width="358px"
+      height="440px"
       justifyContent="center"
       alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
+      borderRadius="5px"
       {...getOverrideProps(overrides, "SpotlightActionCard")}
       {...rest}
     >
       <Image
-        width="269px"
-        height="180px"
+        width="358px"
+        height="160px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -52,6 +53,7 @@ export default function SpotlightActionCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        borderRadius="5px"
         src={challengesInfo?.ProjectPic}
         {...getOverrideProps(overrides, "image")}
       ></Image>
@@ -59,7 +61,7 @@ export default function SpotlightActionCard(props) {
         gap="16px"
         direction="column"
         width="unset"
-        height="unset"
+        height="280px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -82,7 +84,9 @@ export default function SpotlightActionCard(props) {
           height="unset"
           justifyContent="flex-start"
           alignItems="flex-start"
-          shrink="0"
+          grow="1"
+          shrink="1"
+          basis="0"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -182,7 +186,7 @@ export default function SpotlightActionCard(props) {
         </Flex>
         <Button
           width="unset"
-          height="unset"
+          height="46px"
           shrink="0"
           alignSelf="stretch"
           size="large"
