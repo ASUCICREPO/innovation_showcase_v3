@@ -6,6 +6,8 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { useNavigate } from 'react-router-dom';
+
 import {
   getOverrideProps,
   useNavigateAction,
@@ -22,11 +24,14 @@ export default function SpotlightActionCard(props) {
   const cardAreaOnMouseLeave = () => {
     setCardAreaBackgroundColor("transparent");
   };
-  const buttonOnClick = useNavigateAction({
-    target: "_blank",
-    type: "url",
-    url: challengesInfo?.Demo,
-  });
+  // const buttonOnClick = useNavigateAction({
+  //   target: "_blank",
+  //   type: "url",
+  //   url: challengesInfo?.Demo,
+  // });
+
+  const navigate = useNavigate();
+
   return (
     <Flex
       gap="0"
@@ -193,9 +198,9 @@ export default function SpotlightActionCard(props) {
           isDisabled={false}
           variation="primary"
           children="Get more Details"
-          onClick={() => {
-            buttonOnClick();
-          }}
+          onClick={() => navigate(`${challengesInfo?.id}`, {
+            state: { challengesInfo }
+          })}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

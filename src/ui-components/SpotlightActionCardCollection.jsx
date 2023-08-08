@@ -28,15 +28,18 @@ export default function SpotlightActionCardCollection(props) {
   }, [itemsProp, itemsDataStore]);
 
   return (
-    <div className="carousel-container" {...rest}>
-      {items?.map((item, index) => (
-        <div className="carousel-item" key={item.id}>
-          <SpotlightActionCard
-            challengesInfo={item}
-            {...(overrideItems && overrideItems({ item, index }))}
-          />
-        </div>
-      ))}
+    <div>
+      <h2 style={{fontFamily:"Inter", textAlign: "center", marginTop: '5%'}}>The Projects That Define Us</h2> {/* Your heading goes here */}
+      <div className="carousel-container" {...rest}>
+        {items?.map((item, index) => (
+          <div className="carousel-item" key={item.id}>
+            <SpotlightActionCard
+              challengesInfo={item}
+              {...(overrideItems && overrideItems({ item, index }))}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

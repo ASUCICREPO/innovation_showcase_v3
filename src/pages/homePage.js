@@ -6,13 +6,12 @@ import SpotlightActionCardCollection from '../ui-components/SpotlightActionCardC
 
 function homePage() {
   const styles = {
-    margin: '2% 0% 0% 10%',
-    display: 'flex',
-    flexDirection: 'row', // Makes it a row
+    margin :'0 0 0 5%',
+    // Makes it a row
     justifyContent: 'center', // Centers items along the row
-    width: '80%', // Uses 90% of the full width
     overflowX: 'auto', // Allows horizontal scrolling
-    
+    height:"100vh",
+    alignItems: "center"
   }
   return (
     
@@ -20,7 +19,7 @@ function homePage() {
         <div  style={styles}> 
           <SpotlightActionCardCollection/>
         </div>
-        <div style={{ margin: '3%' }}>
+        <div style={{margin: '3%'}}>
           <CategoryDisplay/>
         </div>
     </div>
