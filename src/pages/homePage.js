@@ -1,6 +1,5 @@
 
 import CategoryDisplay from './categoryWiseChallenges';
-import NavBarHeader2 from '../ui-components/NavBarHeader2';
 import SpotlightActionCardCollection from '../ui-components/SpotlightActionCardCollection';
 
 

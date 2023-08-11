@@ -3,7 +3,6 @@ import { DataStore } from 'aws-amplify';
 import { ChallengesInfo } from  '../models/index';
 import StandardCard from '../ui-components/StandardCard'
 import './categoryWiseChallenges.css';
-import { Link } from 'react-router-dom';
 
 const CategoryDisplay = () => {
     const [categories, setCategories] = useState([]);

@@ -31,15 +31,24 @@ export default function NavBarHeader2(props) {
       <Flex
         gap="32px"
         direction="row"
-        width="unset"
+        width="100%" 
         height="unset"
-        justifyContent="center"
+        justifyContent="space-between"  // Distribute space between first and last child
         alignItems="center"
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 5")}
       >
+        <Flex
+          gap="32px"
+          direction="row"
+          alignItems="center"
+          onClick={() => {
+            // Use React routing or window location change to navigate to About Page
+            window.location.href = "/";
+          }}
+        >
         <View
           width="34.55px"
           height="30px"
@@ -89,6 +98,33 @@ export default function NavBarHeader2(props) {
           whiteSpace="pre-wrap"
           children="Smart City Cloud Innovation Center Project Showcase"
           {...getOverrideProps(overrides, "WebsiteName")}
+        ></Text></Flex>
+         <Text
+          fontFamily="Inter"
+          fontSize="16px"
+          fontWeight="400"
+          color="#3366CC"
+          lineHeight="24px"
+          textAlign="left"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 16px 0px 0px" // Padding to create some space from the previous element
+          whiteSpace="pre-wrap"
+          children="About"
+          cursor="pointer" // To indicate it's clickable
+        
+          onClick={() => {
+            // Use React routing or window location change to navigate to About Page
+            window.location.href = "/about";
+          }}
+          {...getOverrideProps(overrides, "AboutLink")}  // New override props, if needed
         ></Text>
       </Flex>
     </Flex>

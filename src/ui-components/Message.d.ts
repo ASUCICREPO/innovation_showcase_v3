@@ -6,14 +6,15 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { ButtonProps, FlexProps, SelectFieldProps } from "@aws-amplify/ui-react";
+import { FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type FiltersOverridesProps = {
-    Filters?: PrimitiveOverrideProps<FlexProps>;
-    SelectField?: PrimitiveOverrideProps<SelectFieldProps>;
-    Button?: PrimitiveOverrideProps<ButtonProps>;
+export declare type MessageOverridesProps = {
+    Message?: PrimitiveOverrideProps<FlexProps>;
+    Eyebrow?: PrimitiveOverrideProps<TextProps>;
+    Heading?: PrimitiveOverrideProps<TextProps>;
+    Body?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type FiltersProps = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: FiltersOverridesProps | undefined | null;
+export declare type MessageProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: MessageOverridesProps | undefined | null;
 }>;
-export default function Filters(props: FiltersProps): React.ReactElement;
+export default function Message(props: MessageProps): React.ReactElement;

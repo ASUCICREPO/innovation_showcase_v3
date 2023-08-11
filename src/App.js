@@ -9,7 +9,7 @@ import CategoryDisplay from './pages/categoryWiseChallenges';
 import { BrowserRouter as Router, Route, Routes }from 'react-router-dom';
 import ProductDetail from './ui-components/ProductDetail'
 import HomePage from './pages/homePage';
-
+import About from './pages/About';
 
 function App() {
   return (
@@ -19,6 +19,8 @@ function App() {
         <Routes>
           <Route path='/' element={< HomePage />} />
           <Route path="/:id" element={<ProductDetail />} />
+          <Route path="/about" element={<About/>} />
+
         </Routes>
       </div>
     </Router>

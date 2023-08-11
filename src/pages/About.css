@@ -1,0 +1,29 @@
+.mission-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    height: 100vh;
+    position: relative;  /* This allows us to position the pseudo-element relative to this container */
+}
+
+.mission-container::before {
+    content: "";  /* Necessary for the pseudo-element to show */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;  /* Place it behind the container's content */
+    background-image: url(https://smartchallenges.asu.edu/sites/default/files/2021-11/home_page_hero2x_0.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(10px);
+}
+.our-team{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    height: 100vh;
+    position: relative;  
+}
