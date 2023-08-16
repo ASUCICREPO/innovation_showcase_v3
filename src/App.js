@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Routes }from 'react-router-dom';
 import ProductDetail from './ui-components/ProductDetail'
 import HomePage from './pages/homePage';
 import About from './pages/About';
-
+import MarketingFooterBrand from './ui-components/MarketingFooterBrand'
 function App() {
   return (
     <Router>
@@ -22,6 +22,7 @@ function App() {
           <Route path="/about" element={<About/>} />
 
         </Routes>
+        <MarketingFooterBrand/>
       </div>
     </Router>
    
