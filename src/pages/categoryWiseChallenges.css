@@ -26,3 +26,27 @@
     flex-shrink: 0;
     margin-right: 20px; /* Spacing between cards */
 }
+.filter-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allows elements to wrap to next line on smaller screens */
+
+    /* For larger screens, ensure full width */
+    width: 50%;
+}
+
+.filter-select, .filter-input, .filter-button {
+    margin-right: 16px; 
+    height: 46px;
+    flex: 1; /* Allows elements to grow and take up available space */
+
+    /* For smaller screens, ensure full width */
+    width: 100%;
+}
+
+/* Media Query for screens larger than 768px (common breakpoint for tablets) */
+@media (min-width: 768px) {
+    .filter-select, .filter-input {
+        width: auto; /* Reset to auto width on larger screens */
+    }
+}

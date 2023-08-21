@@ -3,6 +3,8 @@ import { DataStore } from 'aws-amplify';
 import { ChallengesInfo } from  '../models/index';
 import StandardCard from '../ui-components/StandardCard'
 import './categoryWiseChallenges.css';
+import { Button, Flex, Image, Text, Input} from "@aws-amplify/ui-react";
+
 
 const CategoryDisplay = () => {
     const [categories, setCategories] = useState([]);
@@ -49,19 +51,40 @@ const CategoryDisplay = () => {
     
     return (
        <div>
-        <div className='filter-section'>
-          <select value={filterType} onChange={e=>setFilterType(e.target.value)}>
+        <div className='filter-container'>
+          <select 
+            /*style= {{ width: "unset",
+              height:"46px",
+              shrink:"0",
+              alignSelf:"stretch",
+              size:"large",
+              variation:"primary"}}*/
+              className="filter-select"
+              value={filterType} 
+              onChange={e=>setFilterType(e.target.value)}>
             <option value="ProjectName">Challenges Name</option>
             <option value="Customer">Customer</option>
             <option value="AWSServices">AWS Services</option>
 
           </select>
           <input
+            className="filter-input"
+          /* style={{width: "unset",
+            height:"46px",
+            shrink:"0",
+            alignSelf:"stretch",
+            size:"large",
+            variation:"primary"}}*/
             type="text"
             value={filterValue}
             onChange={e=> setFilterValue(e.target.value)}
             placeholder= "Filter challenges..."/>
-            <button onClick={fetchCategories}>Filter</button>
+            <Button
+              className="filter-button"
+              size="large"
+              isDisabled={false}
+              variation="primary"
+              onClick= {fetchCategories}>Filter</Button>
 
         </div>
       {categories.map((category) => (
