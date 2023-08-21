@@ -81,7 +81,7 @@ export default function NavBarHeader2(props) {
         <Text
           fontFamily="Inter"
           fontSize="16px"
-          fontWeight="400"
+          fontWeight="450"
           color="rgba(13,26,38,1)"
           lineHeight="24px"
           textAlign="left"
@@ -102,7 +102,7 @@ export default function NavBarHeader2(props) {
          <Text
           fontFamily="Inter"
           fontSize="16px"
-          fontWeight="400"
+          fontWeight="500"
           color="#3366CC"
           lineHeight="24px"
           textAlign="left"

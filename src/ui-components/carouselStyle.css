@@ -1,0 +1,43 @@
+.carousel-container {
+    position: relative; /* Ensure this container is positioned relatively */
+    overflow: visible;  /* Set overflow to visible */
+}
+
+.carousel-container .slick-arrow {
+    background-color: hsl(190, 70%, 70%);
+    color: white;
+    width: 30px;
+    height: 50px;
+    transition: 0.1s;
+    z-index: 10;  /* to ensure the arrows appear on top */
+    
+    border: 2px solid hsl(190, 70%, 70%) ; /* temporary to check visibility */
+}
+
+.carousel-container .slick-arrow:hover {
+    background-color: hsl(190, 70%, 70%);
+
+    color: black;
+}
+
+.carousel-container .slick-arrow:focus {
+    background-color: hsl(190, 70%, 70%);
+
+    color: black;
+}
+
+.carousel-container .slick-prev {
+    left: -2.5%;
+}
+
+.carousel-container .slick-prev::before {
+    content: '◀';
+}
+
+.carousel-container .slick-next {
+    right: -2.5%;
+}
+
+.carousel-container .slick-next::before {
+    content: '▶';
+}
