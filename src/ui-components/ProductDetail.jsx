@@ -43,7 +43,7 @@ export default function ProductDetail(props) {
       gap="24px"
       direction="row"
       max-width="1160px"
-      height="unset"
+      height="100vh"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"

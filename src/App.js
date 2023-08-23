@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={< HomePage />} />
           <Route path="/:id" element={<ProductDetail />} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/About" element={<About/>} />
 
         </Routes>
         <MarketingFooterBrand/>
