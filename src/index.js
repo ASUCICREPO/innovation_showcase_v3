@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import '@aws-amplify/ui-react/styles.css'
 import { Amplify } from 'aws-amplify'
-import config from './aws-exports'
+
 import { AmplifyProvider } from '@aws-amplify/ui-react' 
 import reportWebVitals from './reportWebVitals';
+import {
+  Predictions,
+  AmazonAIPredictionsProvider
+} from '@aws-amplify/predictions';
+import awsconfig from './aws-exports';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +21,9 @@ root.render(
 );
 
 //this ties the front-end to the backend
-Amplify.configure(config)
+
+Amplify.configure(awsconfig);
+Predictions.addPluggable(new AmazonAIPredictionsProvider());
 
 
 // If you want to start measuring performance in your app, pass a function

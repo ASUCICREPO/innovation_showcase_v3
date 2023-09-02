@@ -11,8 +11,15 @@ import ProductDetail from './ui-components/ProductDetail'
 import HomePage from './pages/homePage';
 import About from './pages/About';
 import MarketingFooterBrand from './ui-components/MarketingFooterBrand'
+import { LanguageProvider } from './pages/LanguageContext';
+
+
+
+
 function App() {
+
   return (
+    <LanguageProvider>
     <Router>
       <NavBarHeader2/>
       <div className='root-page'>
@@ -25,7 +32,7 @@ function App() {
         <MarketingFooterBrand/>
       </div>
     </Router>
-   
+    </LanguageProvider>
   );
 }
 
