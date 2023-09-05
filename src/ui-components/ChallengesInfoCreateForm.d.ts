@@ -23,6 +23,9 @@ export declare type ChallengesInfoCreateFormInputValues = {
     Demo?: string;
     github?: string;
     approach?: string;
+    ProjectName_es?: string;
+    Category_es?: string;
+    approach_es?: string;
 };
 export declare type ChallengesInfoCreateFormValidationValues = {
     ProjectName?: ValidationFunction<string>;
@@ -35,6 +38,9 @@ export declare type ChallengesInfoCreateFormValidationValues = {
     Demo?: ValidationFunction<string>;
     github?: ValidationFunction<string>;
     approach?: ValidationFunction<string>;
+    ProjectName_es?: ValidationFunction<string>;
+    Category_es?: ValidationFunction<string>;
+    approach_es?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ChallengesInfoCreateFormOverridesProps = {
@@ -49,6 +55,9 @@ export declare type ChallengesInfoCreateFormOverridesProps = {
     Demo?: PrimitiveOverrideProps<TextFieldProps>;
     github?: PrimitiveOverrideProps<TextFieldProps>;
     approach?: PrimitiveOverrideProps<TextFieldProps>;
+    ProjectName_es?: PrimitiveOverrideProps<TextFieldProps>;
+    Category_es?: PrimitiveOverrideProps<TextFieldProps>;
+    approach_es?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ChallengesInfoCreateFormProps = React.PropsWithChildren<{
     overrides?: ChallengesInfoCreateFormOverridesProps | undefined | null;

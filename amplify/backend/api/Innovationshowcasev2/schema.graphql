@@ -10,5 +10,8 @@ type ChallengesInfo @model @auth(rules: [{allow: public}]) {
   Demo: String
   github: String
   approach: String
+  ProjectName_es: String
+  Category_es: String
+  approach_es: String
 }
  

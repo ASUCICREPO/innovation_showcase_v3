@@ -80,6 +80,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "ProjectName_es": {
+                    "name": "ProjectName_es",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Category_es": {
+                    "name": "Category_es",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "approach_es": {
+                    "name": "approach_es",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -126,5 +147,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "2efd4034b47fcd7aee5d9b039a54cee4"
+    "version": "66f54b7940d55cc363b40eedf93a449d"
 };

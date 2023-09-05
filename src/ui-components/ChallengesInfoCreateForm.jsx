@@ -39,6 +39,9 @@ export default function ChallengesInfoCreateForm(props) {
     Demo: "",
     github: "",
     approach: "",
+    ProjectName_es: "",
+    Category_es: "",
+    approach_es: "",
   };
   const [ProjectName, setProjectName] = React.useState(
     initialValues.ProjectName
@@ -56,6 +59,15 @@ export default function ChallengesInfoCreateForm(props) {
   const [Demo, setDemo] = React.useState(initialValues.Demo);
   const [github, setGithub] = React.useState(initialValues.github);
   const [approach, setApproach] = React.useState(initialValues.approach);
+  const [ProjectName_es, setProjectName_es] = React.useState(
+    initialValues.ProjectName_es
+  );
+  const [Category_es, setCategory_es] = React.useState(
+    initialValues.Category_es
+  );
+  const [approach_es, setApproach_es] = React.useState(
+    initialValues.approach_es
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setProjectName(initialValues.ProjectName);
@@ -68,6 +80,9 @@ export default function ChallengesInfoCreateForm(props) {
     setDemo(initialValues.Demo);
     setGithub(initialValues.github);
     setApproach(initialValues.approach);
+    setProjectName_es(initialValues.ProjectName_es);
+    setCategory_es(initialValues.Category_es);
+    setApproach_es(initialValues.approach_es);
     setErrors({});
   };
   const validations = {
@@ -81,6 +96,9 @@ export default function ChallengesInfoCreateForm(props) {
     Demo: [],
     github: [],
     approach: [],
+    ProjectName_es: [],
+    Category_es: [],
+    approach_es: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -118,6 +136,9 @@ export default function ChallengesInfoCreateForm(props) {
           Demo,
           github,
           approach,
+          ProjectName_es,
+          Category_es,
+          approach_es,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -143,8 +164,8 @@ export default function ChallengesInfoCreateForm(props) {
         }
         try {
           Object.entries(modelFields).forEach(([key, value]) => {
-            if (typeof value === "string" && value.trim() === "") {
-              modelFields[key] = undefined;
+            if (typeof value === "string" && value === "") {
+              modelFields[key] = null;
             }
           });
           await DataStore.save(new ChallengesInfo(modelFields));
@@ -182,6 +203,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.ProjectName ?? value;
@@ -215,6 +239,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.Category ?? value;
@@ -248,6 +275,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.Customer ?? value;
@@ -281,6 +311,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.AWSServices ?? value;
@@ -314,6 +347,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.ProjectPic ?? value;
@@ -347,6 +383,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.ProjectInfoURL ?? value;
@@ -380,6 +419,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.Highlight ?? value;
@@ -413,6 +455,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo: value,
               github,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.Demo ?? value;
@@ -446,6 +491,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github: value,
               approach,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.github ?? value;
@@ -479,6 +527,9 @@ export default function ChallengesInfoCreateForm(props) {
               Demo,
               github,
               approach: value,
+              ProjectName_es,
+              Category_es,
+              approach_es,
             };
             const result = onChange(modelFields);
             value = result?.approach ?? value;
@@ -492,6 +543,114 @@ export default function ChallengesInfoCreateForm(props) {
         errorMessage={errors.approach?.errorMessage}
         hasError={errors.approach?.hasError}
         {...getOverrideProps(overrides, "approach")}
+      ></TextField>
+      <TextField
+        label="Project name es"
+        isRequired={false}
+        isReadOnly={false}
+        value={ProjectName_es}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo,
+              github,
+              approach,
+              ProjectName_es: value,
+              Category_es,
+              approach_es,
+            };
+            const result = onChange(modelFields);
+            value = result?.ProjectName_es ?? value;
+          }
+          if (errors.ProjectName_es?.hasError) {
+            runValidationTasks("ProjectName_es", value);
+          }
+          setProjectName_es(value);
+        }}
+        onBlur={() => runValidationTasks("ProjectName_es", ProjectName_es)}
+        errorMessage={errors.ProjectName_es?.errorMessage}
+        hasError={errors.ProjectName_es?.hasError}
+        {...getOverrideProps(overrides, "ProjectName_es")}
+      ></TextField>
+      <TextField
+        label="Category es"
+        isRequired={false}
+        isReadOnly={false}
+        value={Category_es}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo,
+              github,
+              approach,
+              ProjectName_es,
+              Category_es: value,
+              approach_es,
+            };
+            const result = onChange(modelFields);
+            value = result?.Category_es ?? value;
+          }
+          if (errors.Category_es?.hasError) {
+            runValidationTasks("Category_es", value);
+          }
+          setCategory_es(value);
+        }}
+        onBlur={() => runValidationTasks("Category_es", Category_es)}
+        errorMessage={errors.Category_es?.errorMessage}
+        hasError={errors.Category_es?.hasError}
+        {...getOverrideProps(overrides, "Category_es")}
+      ></TextField>
+      <TextField
+        label="Approach es"
+        isRequired={false}
+        isReadOnly={false}
+        value={approach_es}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              ProjectName,
+              Category,
+              Customer,
+              AWSServices,
+              ProjectPic,
+              ProjectInfoURL,
+              Highlight,
+              Demo,
+              github,
+              approach,
+              ProjectName_es,
+              Category_es,
+              approach_es: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.approach_es ?? value;
+          }
+          if (errors.approach_es?.hasError) {
+            runValidationTasks("approach_es", value);
+          }
+          setApproach_es(value);
+        }}
+        onBlur={() => runValidationTasks("approach_es", approach_es)}
+        errorMessage={errors.approach_es?.errorMessage}
+        hasError={errors.approach_es?.hasError}
+        {...getOverrideProps(overrides, "approach_es")}
       ></TextField>
       <Flex
         justifyContent="space-between"

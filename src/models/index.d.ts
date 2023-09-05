@@ -22,6 +22,9 @@ type EagerChallengesInfo = {
   readonly Demo?: string | null;
   readonly github?: string | null;
   readonly approach?: string | null;
+  readonly ProjectName_es?: string | null;
+  readonly Category_es?: string | null;
+  readonly approach_es?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -42,6 +45,9 @@ type LazyChallengesInfo = {
   readonly Demo?: string | null;
   readonly github?: string | null;
   readonly approach?: string | null;
+  readonly ProjectName_es?: string | null;
+  readonly Category_es?: string | null;
+  readonly approach_es?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
