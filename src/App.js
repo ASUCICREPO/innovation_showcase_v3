@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { DataStore } from 'aws-amplify';
-import {Post, User} from  './models'
-import { useEffect , useState} from 'react';
-import SpotlightActionCardCollection from './ui-components/SpotlightActionCardCollection';
+
 import NavBarHeader2 from './ui-components/NavBarHeader2';
-import CategoryDisplay from './pages/categoryWiseChallenges';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes }from 'react-router-dom';
 import ProductDetail from './ui-components/ProductDetail'
 import HomePage from './pages/homePage';
 import About from './pages/About';
 import MarketingFooterBrand from './ui-components/MarketingFooterBrand'
-import { LanguageProvider } from './pages/LanguageContext';
+import { LanguageContext } from './pages/languageContext';
 
 
 
 
 function App() {
 
+  const [language, setLanguage] = useState('en');
+  console.log(language)
+
   return (
-    <LanguageProvider>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
     <Router>
       <NavBarHeader2/>
       <div className='root-page'>
@@ -32,7 +32,7 @@ function App() {
         <MarketingFooterBrand/>
       </div>
     </Router>
-    </LanguageProvider>
+    </LanguageContext.Provider>
   );
 }
 

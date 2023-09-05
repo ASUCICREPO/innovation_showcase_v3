@@ -5,13 +5,19 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React, { useState,useContext } from 'react';
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, Text, View } from "@aws-amplify/ui-react";
 import ciclogo from '../media/ciclogo.png'
+import {LanguageContext} from "../pages/languageContext";
 
 export default function NavBarHeader2(props) {
   const { overrides, ...rest } = props;
+  const { language, setLanguage } = useContext(LanguageContext);
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+    // You might later add logic here to globally set the language or fetch data
+  };
   return (
     <Flex
       gap="10px"
@@ -61,6 +67,7 @@ export default function NavBarHeader2(props) {
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Logo")}
         >
+          
           <img
           src= {ciclogo}  // Replace this with the actual path to your image
           width="38.55px"
@@ -99,6 +106,13 @@ export default function NavBarHeader2(props) {
           children="Smart City Cloud Innovation Center Project Showcase"
           {...getOverrideProps(overrides, "WebsiteName")}
         ></Text></Flex>
+        {/* Add a dropdown for language selection */}
+        <select value={language} onChange={handleLanguageChange}>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            {/* Add more languages as necessary */}
+          </select>
+          
          <Text
           fontFamily="Inter"
           fontSize="16px"

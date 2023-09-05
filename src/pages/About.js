@@ -3,7 +3,6 @@ import OurTeam from '../ui-components/OurTeam';
 import Message from '../ui-components/Message';
 import './About.css';
 import React, { useState, useEffect } from 'react';
-import { Amplify, Predictions } from 'aws-amplify';
 import useTranslate from './useTranslate';
 
 const About = () => {

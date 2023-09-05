@@ -14,6 +14,7 @@ import {
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
+
 export default function SpotlightActionCard(props) {
   const { challengesInfo, Details, overrides, ...rest } = props;
   const [cardAreaBackgroundColor, setCardAreaBackgroundColor] =

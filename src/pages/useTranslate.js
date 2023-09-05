@@ -1,7 +1,7 @@
 // hooks/useTranslate.js
 
 import { useState } from 'react';
-import { Amplify, Predictions } from 'aws-amplify';
+import { Predictions } from 'aws-amplify';
 
 function useTranslate() {
     const [translatedText, setTranslatedText] = useState("");

@@ -3,18 +3,34 @@ import { DataStore } from 'aws-amplify';
 import { ChallengesInfo } from  '../models/index';
 import StandardCard from '../ui-components/StandardCard'
 import './categoryWiseChallenges.css';
-import { Button, Flex, Image, Text, Input} from "@aws-amplify/ui-react";
-
+import { Button} from "@aws-amplify/ui-react";
+import { useContext } from 'react';
+import { LanguageContext } from './languageContext';
 
 const CategoryDisplay = () => {
     const [categories, setCategories] = useState([]);
     const [filterValue, setFilterValue] = useState('');
     const [filterType, setFilterType] = useState('name'); // 'name' or 'Customer'
+    const { language } = useContext(LanguageContext);
+    console.log({language})
     const fetchCategories = async () => {
       // Fetch all challenges
       const challenges = await DataStore.query(ChallengesInfo);
+      
 
-      const filteredChallenges = challenges.filter(challenge => {
+      //add the challenges in the adaptedChallenges as per the language selected
+      const adaptedChallenges = challenges.map(challenge => {
+        return {
+          ...challenge,
+          ProjectName: language === 'en' ? challenge.ProjectName : challenge.ProjectName_es,
+          Category: language === 'en' ? challenge.Category : challenge.Category_es,
+          Customer: language === 'en' && challenge.Customer ? challenge.Customer : challenge.Customer,
+          // ... adapt other fields similarly, if any
+        };
+      });
+
+      //filter the challenges according to the filter chosed
+      const filteredChallenges = adaptedChallenges.filter(challenge => {
         if (filterType === 'ProjectName') {
           return challenge.ProjectName.toLowerCase().includes(filterValue.toLowerCase());
       } else if (filterType === 'Customer' && challenge.Customer) {
@@ -47,7 +63,7 @@ const CategoryDisplay = () => {
     };
     useEffect(() => {
       fetchCategories();
-    }, [filterValue, filterType]);
+    }, [filterValue, filterType, language]);
     
     return (
        <div>
