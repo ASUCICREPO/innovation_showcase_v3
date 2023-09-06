@@ -12,13 +12,15 @@ import {
 } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import { useParams, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { LanguageContext } from '../pages/languageContext';
 
 
 export default function ProductDetail(props) {
   const {  overrides, ...rest } = props;
   const location = useLocation();
   const challengesInfo = location.state?.challengesInfo; // Extract challengesInfo from location's state
- 
+ const { language } = useContext(LanguageContext);
 
   console.log(challengesInfo)
   const buttonTwoNineSevenSixSixNineEightZeroOnClick = useNavigateAction({
@@ -149,7 +151,7 @@ export default function ProductDetail(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children={challengesInfo?.approach}
+              children={language === 'en' ? challengesInfo?.approach : challengesInfo?.approach_es}
               {...getOverrideProps(
                 overrides,
                 "iat"
@@ -188,7 +190,7 @@ export default function ProductDetail(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={challengesInfo?.ProjectName}
+          children={language === 'en' ? challengesInfo?.ProjectName : challengesInfo?.ProjectName_es}
           {...getOverrideProps(overrides, "Project Name")}
         ></Text>
         <Flex
@@ -222,7 +224,7 @@ export default function ProductDetail(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={challengesInfo?.Category}
+            children={language === 'en' ? challengesInfo?.Category : challengesInfo?.Category_es}
             {...getOverrideProps(overrides, "Category")}
           ></Text>
           <Text

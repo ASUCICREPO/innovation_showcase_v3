@@ -12,7 +12,7 @@ const CategoryDisplay = () => {
     const [filterValue, setFilterValue] = useState('');
     const [filterType, setFilterType] = useState('name'); // 'name' or 'Customer'
     const { language } = useContext(LanguageContext);
-    console.log({language})
+    //console.log({language})
     const fetchCategories = async () => {
       // Fetch all challenges
       const challenges = await DataStore.query(ChallengesInfo);

@@ -13,8 +13,8 @@ const About = () => {
 
     return (
     <div>
-       {error && <p>Error: {error.message}</p>}
-            <p>Translated Text: {translatedText}</p>
+       {/*{error && <p>Error: {error.message}</p>}
+            <p>Translated Text: {translatedText}</p>*/}
         <div className= "mission-container">
             <Message style={{margin: "5%"}}/>
             <Feedback1 style={{margin: "5%"}}/>

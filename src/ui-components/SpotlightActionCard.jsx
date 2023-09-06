@@ -7,7 +7,8 @@
 /* eslint-disable */
 import * as React from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { LanguageContext } from '../pages/languageContext';
 import {
   getOverrideProps,
   useNavigateAction,
@@ -16,6 +17,8 @@ import {
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 
 export default function SpotlightActionCard(props) {
+  const { language } = useContext(LanguageContext);
+    
   const { challengesInfo, Details, overrides, ...rest } = props;
   const [cardAreaBackgroundColor, setCardAreaBackgroundColor] =
     useStateMutationAction(undefined);
@@ -32,6 +35,7 @@ export default function SpotlightActionCard(props) {
   // });
 
   const navigate = useNavigate();
+  
 
   return (
     <Flex
@@ -117,7 +121,7 @@ export default function SpotlightActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={challengesInfo?.ProjectName}
+            children={language === 'en' ? challengesInfo?.ProjectName : challengesInfo?.ProjectName_es}
             {...getOverrideProps(overrides, "ProjectName")}
           ></Text>
           <Text
@@ -140,7 +144,7 @@ export default function SpotlightActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={challengesInfo?.Category}
+            children={language === 'en' ? challengesInfo?.Category : challengesInfo?.Category_es}
             {...getOverrideProps(overrides, "Category")}
           ></Text>
           <Text
