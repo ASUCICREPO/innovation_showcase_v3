@@ -7,7 +7,7 @@
 /* eslint-disable */
 import React, { useState,useContext } from 'react';
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Icon, Text, View } from "@aws-amplify/ui-react";
+import { Flex, Icon, Text, View, Button, SelectField} from "@aws-amplify/ui-react";
 import ciclogo from '../media/ciclogo.png'
 import {LanguageContext} from "../pages/languageContext";
 
@@ -106,19 +106,24 @@ export default function NavBarHeader2(props) {
           children="Smart City Cloud Innovation Center Project Showcase"
           {...getOverrideProps(overrides, "WebsiteName")}
         ></Text></Flex>
+        <Flex alignItems="center">
         {/* Add a dropdown for language selection */}
-        <select value={language} onChange={handleLanguageChange}>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            {/* Add more languages as necessary */}
-          </select>
+        <SelectField
+          
+          variation="primary"
+          
+          value={language} onChange={handleLanguageChange}>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              {/* Add more languages as necessary */}
+          </SelectField>
           
          <Text
           fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="500"
+         
+          
           color="#3366CC"
-          lineHeight="24px"
+          
           textAlign="left"
           display="block"
           direction="column"
@@ -128,8 +133,7 @@ export default function NavBarHeader2(props) {
           gap="unset"
           alignItems="unset"
           shrink="0"
-          position="relative"
-          padding="0px 16px 0px 0px" // Padding to create some space from the previous element
+          
           whiteSpace="pre-wrap"
           children="About"
           cursor="pointer" // To indicate it's clickable
@@ -140,6 +144,7 @@ export default function NavBarHeader2(props) {
           }}
           {...getOverrideProps(overrides, "AboutLink")}  // New override props, if needed
         ></Text>
+        </Flex>
       </Flex>
     </Flex>
   );
