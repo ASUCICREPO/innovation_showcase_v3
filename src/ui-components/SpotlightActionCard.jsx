@@ -202,7 +202,7 @@ export default function SpotlightActionCard(props) {
           size="large"
           isDisabled={false}
           variation="primary"
-          children="Get more Details"
+          children="Get more details"
           onClick={() => navigate(`${challengesInfo?.id}`, {
             state: { challengesInfo }
           })}
