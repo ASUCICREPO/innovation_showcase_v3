@@ -8,7 +8,7 @@ import ProductDetail from './ui-components/ProductDetail'
 import HomePage from './pages/homePage';
 import About from './pages/About';
 import MarketingFooterBrand from './ui-components/MarketingFooterBrand'
-import { LanguageContext } from './pages/languageContext';
+import { LanguageContext } from './pages/LanguageContext';
 
 
 

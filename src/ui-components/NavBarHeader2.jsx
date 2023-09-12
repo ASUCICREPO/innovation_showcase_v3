@@ -9,7 +9,7 @@ import React, { useState,useContext } from 'react';
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, Text, View, Button, SelectField} from "@aws-amplify/ui-react";
 import ciclogo from '../media/ciclogo.png'
-import {LanguageContext} from "../pages/languageContext";
+import {LanguageContext} from "../pages/LanguageContext";
 
 export default function NavBarHeader2(props) {
   const { overrides, ...rest } = props;
@@ -103,7 +103,7 @@ export default function NavBarHeader2(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Smart City Cloud Innovation Center Project Showcase"
+          children="Smart City Cloud Innovation Center Solution Showcase"
           {...getOverrideProps(overrides, "WebsiteName")}
         ></Text></Flex>
         <Flex alignItems="center">

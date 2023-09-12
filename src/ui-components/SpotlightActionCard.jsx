@@ -8,7 +8,7 @@
 import * as React from "react";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { LanguageContext } from '../pages/languageContext';
+import { LanguageContext } from '../pages/LanguageContext';
 import {
   getOverrideProps,
   useNavigateAction,

@@ -13,7 +13,7 @@ import {
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import { useParams, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import { LanguageContext } from '../pages/languageContext';
+import { LanguageContext } from '../pages/LanguageContext';
 
 
 export default function ProductDetail(props) {

@@ -5,7 +5,7 @@ import StandardCard from '../ui-components/StandardCard'
 import './categoryWiseChallenges.css';
 import { Button} from "@aws-amplify/ui-react";
 import { useContext } from 'react';
-import { LanguageContext } from './languageContext';
+import { LanguageContext } from './LanguageContext';
 
 const CategoryDisplay = () => {
     const [categories, setCategories] = useState([]);
