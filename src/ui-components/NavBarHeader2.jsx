@@ -103,7 +103,7 @@ export default function NavBarHeader2(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Smart City Cloud Innovation Center Solution Showcase"
+          children="Smart city cloud innovation center solution showcase"
           {...getOverrideProps(overrides, "WebsiteName")}
         ></Text></Flex>
         <Flex alignItems="center">
