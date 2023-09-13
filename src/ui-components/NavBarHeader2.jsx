@@ -8,7 +8,7 @@
 import React, { useState,useContext } from 'react';
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, Text, View, Button, SelectField} from "@aws-amplify/ui-react";
-import ciclogo from '../media/ciclogo.png'
+import ciclogo from '../media/ASUlogo.png'
 import {LanguageContext} from "../pages/LanguageContext";
 
 export default function NavBarHeader2(props) {
@@ -70,8 +70,8 @@ export default function NavBarHeader2(props) {
           
           <img
           src= {ciclogo}  // Replace this with the actual path to your image
-          width="38.55px"
-          height="34px"
+          width="60px"
+          height="38px"
           style={{
             display: 'block',
             position: 'absolute',
@@ -79,7 +79,7 @@ export default function NavBarHeader2(props) {
             bottom: '0%',
             left: '0%',
             right: '0%',
-            borderRadius: '10px'  // Optional: If you want the edges to be rounded
+            
           }}
           {...getOverrideProps(overrides, "Union")}  // If needed
         />

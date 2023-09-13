@@ -42,7 +42,7 @@ export default function SpotlightActionCardCollection(props) {
 
   return (
     <div>
-      <h2 style={{ fontFamily: 'Inter', textAlign: 'center', marginTop: '5%' }}>Addressing Community Challenges With Technology</h2>
+      <h2 style={{ fontFamily: 'Inter', textAlign: 'center', marginTop: '5%' }}>Addressing community challenges with technology</h2>
       <div className="carousel-container">
         <Slider {...settings}>
           {items?.map((item, index) => (
