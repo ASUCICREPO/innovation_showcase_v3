@@ -205,7 +205,7 @@ export default function SpotlightActionCard(props) {
           children="Get more details"
           onClick={() => {
             if (language === 'en' ? challengesInfo?.ProjectName === 'Celebrity recognition' : challengesInfo?.ProjectName_es === 'Celebrity recognition') {
-              window.location.href = 'https://d3sbom3awy8orp.cloudfront.net/index.html#!/';
+              window.open('https://d3sbom3awy8orp.cloudfront.net/index.html#!/', '_blank');
             } else {
               navigate(`${challengesInfo?.id}`, {
                 state: { challengesInfo }
